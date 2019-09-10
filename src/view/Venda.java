@@ -90,6 +90,8 @@ public class Venda extends javax.swing.JFrame {
 
         jLabel3.setText("Número da Venda");
 
+        edVenda.setEditable(false);
+
         jLabel4.setText("Código do Produto:");
 
         jLabel5.setText("Descrição do Produto:");

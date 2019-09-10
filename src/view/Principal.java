@@ -38,6 +38,7 @@ public class Principal extends javax.swing.JFrame {
         mnClientes = new javax.swing.JMenuItem();
         mnProdutos = new javax.swing.JMenuItem();
         mnUsuarios = new javax.swing.JMenuItem();
+        mnEstados = new javax.swing.JMenuItem();
         mnVendas = new javax.swing.JMenu();
         mnVender = new javax.swing.JMenuItem();
 
@@ -92,6 +93,14 @@ public class Principal extends javax.swing.JFrame {
         });
         mnCadastro.add(mnUsuarios);
 
+        mnEstados.setText("Estados");
+        mnEstados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnEstadosActionPerformed(evt);
+            }
+        });
+        mnCadastro.add(mnEstados);
+
         jMenuBar1.add(mnCadastro);
 
         mnVendas.setText("Vendas");
@@ -143,6 +152,10 @@ public class Principal extends javax.swing.JFrame {
         new Venda().setVisible(true);
     }//GEN-LAST:event_mnVenderActionPerformed
 
+    private void mnEstadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnEstadosActionPerformed
+        new Estados().setVisible(true);
+    }//GEN-LAST:event_mnEstadosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -184,6 +197,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu mnArquivos;
     private javax.swing.JMenu mnCadastro;
     private javax.swing.JMenuItem mnClientes;
+    private javax.swing.JMenuItem mnEstados;
     private javax.swing.JMenuItem mnProdutos;
     private javax.swing.JMenuItem mnSair;
     private javax.swing.JMenuItem mnUsuarios;
