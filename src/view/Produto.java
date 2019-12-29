@@ -101,6 +101,7 @@ public class Produto extends javax.swing.JFrame {
         edDescricao = new javax.swing.JFormattedTextField();
         edValor = new javax.swing.JFormattedTextField();
         edEstoque = new javax.swing.JFormattedTextField();
+        btVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Produtos");
@@ -204,6 +205,13 @@ public class Produto extends javax.swing.JFrame {
             }
         });
 
+        btVoltar.setText("Voltar");
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -251,6 +259,8 @@ public class Produto extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btExcluir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btVoltar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btSalvar)
                         .addGap(34, 34, 34))))
         );
@@ -286,7 +296,8 @@ public class Produto extends javax.swing.JFrame {
                     .addComponent(btNovo)
                     .addComponent(btAlterar)
                     .addComponent(btExcluir)
-                    .addComponent(btSalvar))
+                    .addComponent(btSalvar)
+                    .addComponent(btVoltar))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
@@ -399,6 +410,11 @@ public class Produto extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tbProdutosMouseClicked
 
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+        new Principal().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btVoltarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -454,6 +470,7 @@ public class Produto extends javax.swing.JFrame {
     private javax.swing.JButton btNovo;
     private javax.swing.JButton btPesquisar;
     private javax.swing.JButton btSalvar;
+    private javax.swing.JButton btVoltar;
     private javax.swing.JFormattedTextField edDescricao;
     private javax.swing.JFormattedTextField edEstoque;
     private javax.swing.JTextField edId;

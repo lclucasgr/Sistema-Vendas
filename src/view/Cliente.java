@@ -451,8 +451,8 @@ public class Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_tbClientesMouseClicked
 
     private void BtVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtVoltarActionPerformed
-        Principal p = new Principal();
-        p.setVisible(true);
+       new Principal().setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_BtVoltarActionPerformed
 
     /**

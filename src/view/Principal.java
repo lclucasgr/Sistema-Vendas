@@ -138,22 +138,27 @@ public class Principal extends javax.swing.JFrame {
 
     private void mnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnClientesActionPerformed
         new Cliente().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_mnClientesActionPerformed
 
     private void mnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnProdutosActionPerformed
         new Produto().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_mnProdutosActionPerformed
 
     private void mnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnUsuariosActionPerformed
         new Usuario().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_mnUsuariosActionPerformed
 
     private void mnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnVenderActionPerformed
         new Venda().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_mnVenderActionPerformed
 
     private void mnEstadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnEstadosActionPerformed
         new Estados().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_mnEstadosActionPerformed
 
     /**
