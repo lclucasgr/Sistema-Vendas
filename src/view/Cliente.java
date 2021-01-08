@@ -43,7 +43,10 @@ public class Cliente extends javax.swing.JFrame {
                 c.getCidade(),
                 c.getEstado(),
                 c.getCep(),
-                c.getTelefone(),});
+                c.getTelefone(),
+                c.getCpf()
+            });
+                
 
         }
 
@@ -65,7 +68,8 @@ public class Cliente extends javax.swing.JFrame {
                 c.getCidade(),
                 c.getEstado(),
                 c.getCep(),
-                c.getTelefone()
+                c.getTelefone(),
+                c.getCpf()
             });
 
         }
@@ -101,6 +105,8 @@ public class Cliente extends javax.swing.JFrame {
         btExcluir = new javax.swing.JButton();
         edCep = new javax.swing.JFormattedTextField();
         BtVoltar = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        edCpf = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -140,14 +146,14 @@ public class Cliente extends javax.swing.JFrame {
 
             },
             new String [] {
-                "codigo", "nome", "endereco", "bairro", "cidade", "estado", "cep", "telefone"
+                "codigo", "nome", "endereco", "bairro", "cidade", "estado", "cep", "telefone", "cpf"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true, true, true
+                false, false, false, false, true, true, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -217,6 +223,8 @@ public class Cliente extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setText("CPF:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -263,6 +271,10 @@ public class Cliente extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
                             .addComponent(edTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(126, 126, 126)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(edCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -312,11 +324,13 @@ public class Cliente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(edTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
@@ -369,6 +383,7 @@ public class Cliente extends javax.swing.JFrame {
         c.setEstado(cbEstado.getSelectedItem().toString());
         c.setCep(edCep.getText());
         c.setTelefone(edTelefone.getText());
+        c.setCpf(edCpf.getText());
         dc.salvarCliente(c);
 
         edNome.setText("");
@@ -377,6 +392,7 @@ public class Cliente extends javax.swing.JFrame {
         edCidade.setText("");
         edCep.setText("");
         edTelefone.setText("");
+        edCpf.setText("");
 
         readJTable();
     }//GEN-LAST:event_btSalvarActionPerformed
@@ -398,6 +414,7 @@ public class Cliente extends javax.swing.JFrame {
             edCidade.setText("");
             edCep.setText("");
             edTelefone.setText("");
+            edCpf.setText("");
 
             readJTable();
 
@@ -420,6 +437,7 @@ public class Cliente extends javax.swing.JFrame {
             c.setEstado(cbEstado.getSelectedItem().toString());
             c.setCep(edCep.getText());
             c.setTelefone(edTelefone.getText());
+            c.setCpf(edCpf.getText());
             c.setId((int) tbClientes.getValueAt(tbClientes.getSelectedRow(), 0));
             dc.alterarCliente(c);
 
@@ -429,6 +447,7 @@ public class Cliente extends javax.swing.JFrame {
             edCidade.setText("");
             edCep.setText("");
             edTelefone.setText("");
+            edCpf.setText("");
             readJTable();
         }
     }//GEN-LAST:event_btAlterarActionPerformed
@@ -447,6 +466,7 @@ public class Cliente extends javax.swing.JFrame {
             edCidade.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 4).toString());
             edCep.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 6).toString());
             edTelefone.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 7).toString());
+            edCpf.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 8).toString());
         }
     }//GEN-LAST:event_tbClientesMouseClicked
 
@@ -498,6 +518,7 @@ public class Cliente extends javax.swing.JFrame {
         cbEstado.setEnabled(condicao);
         edCep.setEnabled(condicao);
         edTelefone.setEnabled(condicao);
+        edCpf.setEnabled(condicao);
         btSalvar.setEnabled(condicao);
     }
 
@@ -508,6 +529,7 @@ public class Cliente extends javax.swing.JFrame {
         edCidade.setText("");
         edCep.setText("");
         edTelefone.setText("");
+        edCpf.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -521,6 +543,7 @@ public class Cliente extends javax.swing.JFrame {
     private javax.swing.JTextField edBairro;
     private javax.swing.JFormattedTextField edCep;
     private javax.swing.JTextField edCidade;
+    private javax.swing.JTextField edCpf;
     private javax.swing.JTextField edEndereco;
     private javax.swing.JTextField edId;
     private javax.swing.JTextField edNome;
@@ -533,6 +556,7 @@ public class Cliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbClientes;

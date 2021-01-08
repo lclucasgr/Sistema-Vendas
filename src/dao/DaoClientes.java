@@ -20,7 +20,7 @@ public class DaoClientes extends ConnectionFactory {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("INSERT INTO clientes (nome, endereco, bairro, cidade, estado, cep, telefone)VALUES(?,?,?,?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO clientes (nome, endereco, bairro, cidade, estado, cep, telefone, cpf)VALUES(?,?,?,?,?,?,?,?)");
             stmt.setString(1, cliente.getNome());
             stmt.setString(2, cliente.getEndereco());
             stmt.setString(3, cliente.getBairro());
@@ -28,6 +28,7 @@ public class DaoClientes extends ConnectionFactory {
             stmt.setString(5, cliente.getEstado());
             stmt.setString(6, cliente.getCep());
             stmt.setString(7, cliente.getTelefone());
+            stmt.setString(8, cliente.getCpf());
 
             stmt.executeUpdate();
 
@@ -66,7 +67,7 @@ public class DaoClientes extends ConnectionFactory {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("UPDATE clientes SET nome = ? , endereco = ?, bairro = ?, cidade = ?, estado = ?, cep = ?, telefone = ? WHERE id = ?");
+            stmt = con.prepareStatement("UPDATE clientes SET nome = ? , endereco = ?, bairro = ?, cidade = ?, estado = ?, cep = ?, telefone = ?, cpf = ? WHERE id = ?");
             stmt.setString(1, cliente.getNome());
             stmt.setString(2, cliente.getEndereco());
             stmt.setString(3, cliente.getBairro());
@@ -74,7 +75,8 @@ public class DaoClientes extends ConnectionFactory {
             stmt.setString(5, cliente.getEstado());
             stmt.setString(6, cliente.getCep());
             stmt.setString(7, cliente.getTelefone());
-            stmt.setInt(8, cliente.getId());
+            stmt.setString(8, cliente.getCpf());
+            stmt.setInt(9, cliente.getId());
 
             stmt.executeUpdate();
 
@@ -112,6 +114,7 @@ public class DaoClientes extends ConnectionFactory {
                 c.setCidade(rs.getString("cidade"));
                 c.setEstado(rs.getString("estado"));
                 c.setCep(rs.getString("cep"));
+                c.setCpf(rs.getString("cpf"));
                 clientes.add(c);
             }
 
@@ -149,6 +152,7 @@ public class DaoClientes extends ConnectionFactory {
                 c.setEstado(rs.getString("estado"));
                 c.setCep(rs.getString("cep"));
                 c.setTelefone(rs.getString("telefone"));
+                c.setCpf(rs.getString("cpf"));
                 listaClientes.add(c);
             }
 
@@ -182,6 +186,7 @@ public class DaoClientes extends ConnectionFactory {
                 c.setEstado(this.getResultSet().getString(6));
                 c.setCep(this.getResultSet().getString(7));
                 c.setTelefone(this.getResultSet().getString(8));
+                c.setCpf(this.getResultSet().getString(9));
             }
         } catch (Exception e) {
             e.printStackTrace();

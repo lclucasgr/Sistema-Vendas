@@ -322,6 +322,7 @@ public class Produto extends javax.swing.JFrame {
 
         p.setDescricao(edDescricao.getText());
         //p.setValor(Double.parseDouble(edValor.getText()));
+        //p.setValor((float) formatar.converterVirgulaParaPonto(this.edValor.getText()));
         p.setValor(formatar.converterVirgulaParaPonto(this.edValor.getText()));
         p.setEstoque(Integer.parseInt(edEstoque.getText()));
         dp.salvarProduto(p);

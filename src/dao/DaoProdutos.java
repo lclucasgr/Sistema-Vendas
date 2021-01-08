@@ -97,7 +97,7 @@ public class DaoProdutos extends ConnectionFactory {
 
                 p.setId(rs.getInt("id"));
                 p.setDescricao(rs.getString("descricao"));
-                p.setValor(rs.getDouble("valor"));
+                p.setValor(rs.getFloat("valor"));
                 p.setEstoque(rs.getInt("estoque"));
                 listaProdutos.add(p);
             }
@@ -133,7 +133,7 @@ public class DaoProdutos extends ConnectionFactory {
 
                 p.setId(rs.getInt("id"));
                 p.setDescricao(rs.getString("descricao"));
-                p.setValor(rs.getDouble("valor"));
+                p.setValor(rs.getFloat("valor"));
                 p.setEstoque(rs.getInt("estoque"));
                 produtos.add(p);
             }

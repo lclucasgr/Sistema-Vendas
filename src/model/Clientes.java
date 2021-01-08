@@ -14,6 +14,7 @@ public class Clientes {
     private String estado;
     private String cep;
     private String telefone;
+    private String cpf;
 
     public void setId(int id) {
         this.id = id;
@@ -23,8 +24,8 @@ public class Clientes {
         return this.id;
     }
 
-    public void setNome(String pNome) {
-        this.nome = pNome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     /**
@@ -39,8 +40,8 @@ public class Clientes {
      *
      * @param pEndereco
      */
-    public void setEndereco(String pEndereco) {
-        this.endereco = pEndereco;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     /**
@@ -55,8 +56,8 @@ public class Clientes {
      *
      * @param pBairro
      */
-    public void setBairro(String pBairro) {
-        this.bairro = pBairro;
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 
     /**
@@ -71,8 +72,8 @@ public class Clientes {
      *
      * @param pCidade
      */
-    public void setCidade(String pCidade) {
-        this.cidade = pCidade;
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
     /**
@@ -87,8 +88,8 @@ public class Clientes {
      *
      * @param pEstado
      */
-    public void setEstado(String pEstado) {
-        this.estado = pEstado;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     /**
@@ -103,8 +104,8 @@ public class Clientes {
      *
      * @param pCep
      */
-    public void setCep(String pCep) {
-        this.cep = pCep;
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
     /**
@@ -119,8 +120,8 @@ public class Clientes {
      *
      * @param pTelefone
      */
-    public void setTelefone(String pTelefone) {
-        this.telefone = pTelefone;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     /**
@@ -128,6 +129,16 @@ public class Clientes {
      */
     public String getTelefone() {
         return this.telefone;
+    }
+    
+    public void setCpf(String cpf)
+    {
+        this.cpf = cpf;
+    }        
+    
+    public String getCpf()
+    {
+        return this.cpf;
     }
 
 }

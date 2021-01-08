@@ -39,8 +39,12 @@ public class Principal extends javax.swing.JFrame {
         mnProdutos = new javax.swing.JMenuItem();
         mnUsuarios = new javax.swing.JMenuItem();
         mnEstados = new javax.swing.JMenuItem();
+        mnVeiculos = new javax.swing.JMenuItem();
         mnVendas = new javax.swing.JMenu();
         mnVender = new javax.swing.JMenuItem();
+        mnPesquisa = new javax.swing.JMenu();
+        mnPC = new javax.swing.JMenuItem();
+        mnPV = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,6 +105,14 @@ public class Principal extends javax.swing.JFrame {
         });
         mnCadastro.add(mnEstados);
 
+        mnVeiculos.setText("Veiculos");
+        mnVeiculos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnVeiculosActionPerformed(evt);
+            }
+        });
+        mnCadastro.add(mnVeiculos);
+
         jMenuBar1.add(mnCadastro);
 
         mnVendas.setText("Vendas");
@@ -114,6 +126,16 @@ public class Principal extends javax.swing.JFrame {
         mnVendas.add(mnVender);
 
         jMenuBar1.add(mnVendas);
+
+        mnPesquisa.setText("Pesquisa");
+
+        mnPC.setText("Clientes");
+        mnPesquisa.add(mnPC);
+
+        mnPV.setText("Veiculos");
+        mnPesquisa.add(mnPV);
+
+        jMenuBar1.add(mnPesquisa);
 
         setJMenuBar(jMenuBar1);
 
@@ -161,6 +183,11 @@ public class Principal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_mnEstadosActionPerformed
 
+    private void mnVeiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnVeiculosActionPerformed
+       new Veiculo().setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_mnVeiculosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -203,9 +230,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu mnCadastro;
     private javax.swing.JMenuItem mnClientes;
     private javax.swing.JMenuItem mnEstados;
+    private javax.swing.JMenuItem mnPC;
+    private javax.swing.JMenuItem mnPV;
+    private javax.swing.JMenu mnPesquisa;
     private javax.swing.JMenuItem mnProdutos;
     private javax.swing.JMenuItem mnSair;
     private javax.swing.JMenuItem mnUsuarios;
+    private javax.swing.JMenuItem mnVeiculos;
     private javax.swing.JMenu mnVendas;
     private javax.swing.JMenuItem mnVender;
     // End of variables declaration//GEN-END:variables

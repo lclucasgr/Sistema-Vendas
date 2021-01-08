@@ -168,7 +168,7 @@ public class Estados extends javax.swing.JFrame {
     {
         try{
             String user = "root";
-            String password = "palmeiras";
+            String password = "";
             String url = "jdbc:mysql://localhost:3306/vendas_db";
             
             Connection conexao = DriverManager.getConnection(url, user, password);
@@ -194,7 +194,7 @@ public class Estados extends javax.swing.JFrame {
     {
         try{
             String user = "root";
-            String senha = "palmeiras";
+            String senha = "";
             String url = "jdbc:mysql://localhost:3306/vendas_db";
             
             Connection conexao = DriverManager.getConnection(url, user, senha);
